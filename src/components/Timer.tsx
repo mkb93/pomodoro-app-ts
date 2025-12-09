@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import formatTime from "../tools/formatTime";
 
 type TimerMode = "pomodoro" | "sBreak";
@@ -14,42 +14,33 @@ const Timer = ({ totalTime, color, selectT, setTimer }: TimerProps) => {
   const [timeRemaining, setTimeRemaining] = useState<number>(totalTime);
   const [isPaused, setIsPaused] = useState<boolean>(true);
 
-  const intervalRef = useRef<number | null>(null);
-
   const handleTimer = (word: TimerMode): TimerMode => {
     return word === "pomodoro" ? "sBreak" : "pomodoro";
   };
 
   // Countdown logic
   useEffect(() => {
-    if (timeRemaining === 0) {
-      setIsPaused(true);
-
-      const audio = new Audio("/alarm.mp3"); // must be in public/
-      audio.play();
-
-      setTimer(handleTimer(selectT));
-      return;
-    }
-
-    if (!isPaused) {
-      intervalRef.current = window.setInterval(() => {
-        setTimeRemaining((prev) => prev - 1);
-      }, 1000);
-    }
-
-    return () => {
-      if (intervalRef.current !== null) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [isPaused, timeRemaining, selectT, setTimer]);
-
-  // Reset when totalTime changes
-  useEffect(() => {
-    setTimeRemaining(totalTime);
-    setIsPaused(true);
-  }, [totalTime]);
+    if (isPaused) return;
+  
+    const id = window.setInterval(() => {
+      setTimeRemaining((prev) => {
+        if (prev <= 1) {
+          // ✅ Safe: state updates occur inside the interval callback
+          setIsPaused(true);
+  
+          const audio = new Audio("/alarm.mp3");
+          audio.play();
+  
+          setTimer(handleTimer(selectT));
+          return 0;
+        }
+  
+        return prev - 1;
+      });
+    }, 1000);
+  
+    return () => clearInterval(id);
+  }, [isPaused, selectT, setTimer]);
 
   const calculateProgress = (): number => {
     return (timeRemaining / totalTime) * 100;

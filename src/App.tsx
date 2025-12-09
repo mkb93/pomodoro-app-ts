@@ -1,43 +1,33 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Timer from "./components/Timer";
+
+type TimerMode = "pomodoro" | "sBreak";
 
 const WORK_TIME = 25 * 60;
+const SHORT_BREAK = 5 * 60;
 
 function App() {
-  const [seconds, setSeconds] = useState<number>(WORK_TIME);
-  const [isRunning, setIsRunning] = useState<boolean>(false);
+  const [mode, setMode] = useState<TimerMode>("pomodoro");
 
-  useEffect(() => {
-    if (!isRunning) return;
-
-    const interval = setInterval(() => {
-      setSeconds((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [isRunning]);
-
-  const toggle = () => setIsRunning((prev) => !prev);
-  const reset = () => {
-    setIsRunning(false);
-    setSeconds(WORK_TIME);
-  };
-
-  const minutes = Math.floor(seconds / 60);
-  const secs = seconds % 60;
+  const totalTime = mode === "pomodoro" ? WORK_TIME : SHORT_BREAK;
 
   return (
     <div style={{ padding: 40 }}>
       <h1>Pomodoro</h1>
-      <h2>
-        {minutes}:{String(secs).padStart(2, "0")}
-      </h2>
 
-      <button onClick={toggle}>
-        {isRunning ? "Pause" : "Start"}
-      </button>
-      <button onClick={reset} style={{ marginLeft: 10 }}>
-        Reset
-      </button>
+      {/* ✅ Timer placed INSIDE return */}
+      <Timer
+        key={mode}                // ✅ Forces reset on mode change
+        totalTime={totalTime}
+        color="color1"
+        selectT={mode}
+        setTimer={setMode}
+      />
+
+      {/* ✅ Simple mode display */}
+      <p style={{ marginTop: 20 }}>
+        Current mode: <strong>{mode}</strong>
+      </p>
     </div>
   );
 }
