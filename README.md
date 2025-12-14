@@ -1,5 +1,10 @@
 # React + TypeScript + Vite
---DESTROY AND REBUILD WITH MINIMAL AI
+--DESTROY AND REBUILD WITH MINIMAL AI Help
+
+questions?
+  why vite?
+  type script benefits versus javascript?
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
