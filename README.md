@@ -4,6 +4,8 @@
 questions?
   why vite?
   type script benefits versus javascript?
+  what other alternatives are available to program this app, language wise?
+  
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
