@@ -3,9 +3,12 @@
 
 questions?
   why vite?
+  -vite is very fast for web applications to display themselves and the rate at which it updates is much faster. its also compatible with quite a few frameworks so it can work smoothly.
+  
   type script benefits versus javascript?
   what other alternatives are available to program this app, language wise?
-  
+
+
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
