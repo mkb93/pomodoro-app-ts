@@ -4,8 +4,11 @@
 questions?
   why vite?
   -vite is very fast for web applications to display themselves and the rate at which it updates is much faster. its also compatible with quite a few frameworks so it can work smoothly.
+
+  typescript benefits versus javascript?
+  In this example that is a small project, I would say that there no benefits except for maybe access to newer libraries but the goal here is to learn typescript to a good degree. 
+  However, the main differences are that it is staticly typed, when excecuted it needs to be transpiled into js code, it checks errors at compile time not at runtime.
   
-  type script benefits versus javascript?
   what other alternatives are available to program this app, language wise?
 
 
