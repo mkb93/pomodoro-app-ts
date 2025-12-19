@@ -8,8 +8,10 @@ questions?
   typescript benefits versus javascript?
   In this example that is a small project, I would say that there no benefits except for maybe access to newer libraries but the goal here is to learn typescript to a good degree. 
   However, the main differences are that it is staticly typed, when excecuted it needs to be transpiled into js code, it checks errors at compile time not at runtime.
-  
+
   what other alternatives are available to program this app, language wise?
+  there are other choices but the ones that stand out for me a relatively inexperienced coder. is using vanilla js because it help you get a great handle on making the components needed. 
+  react is good because itll be easier to make it quickly because those components are already integrated in the framework.
 
 
 
