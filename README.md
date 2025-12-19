@@ -12,6 +12,9 @@ questions?
   what other alternatives are available to program this app, language wise?
   there are other choices but the ones that stand out for me a relatively inexperienced coder. is using vanilla js because it help you get a great handle on making the components needed. 
   react is good because itll be easier to make it quickly because those components are already integrated in the framework.
+  I found mention of svelte to learn more about writing clean code so we'll see. 
+
+  
 
 
 
