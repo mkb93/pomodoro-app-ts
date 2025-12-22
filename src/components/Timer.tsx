@@ -89,6 +89,7 @@ const Timer = ({ totalTime, color, selectT, setTimer }: TimerProps) => {
             >
               PLAY
             </div>
+            
           ) : (
             <div
               className="z-10 text-fontcolor1 font-bold tracking-[15px] min-[1300px]:text-xl hover:cursor-pointer align-middle text-lg mt-3"
@@ -97,6 +98,14 @@ const Timer = ({ totalTime, color, selectT, setTimer }: TimerProps) => {
               PAUSE
             </div>
           )}
+          {
+            <div
+              className="z-10 text-fontcolor1 font-bold tracking-[15px] min-[1300px]:text-xl hover:cursor-pointer align-middle text-lg mt-3"
+              onClick={() => setIsPaused(true)}
+            >
+              Set Timer Length
+            </div>
+          }
         </div>
       </div>
     </div>

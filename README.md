@@ -1,6 +1,10 @@
 # React + TypeScript + Vite
 --DESTROY AND REBUILD WITH MINIMAL AI Help
 
+Current problems:
+I want to add a set timer length feature.
+  I've added the text in the timer html component but i want to make functional
+
 questions?
   why vite?
   -vite is very fast for web applications to display themselves and the rate at which it updates is much faster. its also compatible with quite a few frameworks so it can work smoothly.
@@ -14,7 +18,7 @@ questions?
   react is good because itll be easier to make it quickly because those components are already integrated in the framework.
   I found mention of svelte to learn more about writing clean code so we'll see. 
 
-  
+
 
 
 
