@@ -4,6 +4,8 @@ import formatTime from "../tools/formatTime";
 type TimerMode = "pomodoro" | "sBreak";
 
 type TimerProps = {
+  pomodoroLength: number;
+  breakLength: number;
   totalTime: number;
   color: "color1" | "color2" | "color3";
   selectT: TimerMode;
@@ -47,7 +49,7 @@ const Timer = ({ totalTime, color, selectT, setTimer }: TimerProps) => {
   };
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center min-h-screen">
       <div className="p-6 bg-gradient-to-tl from-[#2E325A] to-[#0E112A] rounded-full drop-shadow-custom">
         <div className="relative min-[1300px]:w-96 min-[1300px]:h-96 flex items-center justify-center flex-col bg-[#161932] rounded-full h-64 w-64 ">
           <svg
@@ -104,6 +106,14 @@ const Timer = ({ totalTime, color, selectT, setTimer }: TimerProps) => {
               onClick={() => setIsPaused(true)}
             >
               Set Timer Length
+            </div>
+          }
+          {
+            <div
+              className="z-10 text-fontcolor1 font-bold tracking-[15px] min-[1300px]:text-xl hover:cursor-pointer align-middle text-lg mt-3"
+              onClick={() => setIsPaused(true)}
+            >
+              Set Break Length
             </div>
           }
         </div>
