@@ -18,7 +18,7 @@ questions?
   react is good because itll be easier to make it quickly because those components are already integrated in the framework.
   I found mention of svelte to learn more about writing clean code so we'll see. 
 
-  what is svg in html and react? christmas eve fake commit
+  what is svg in html and react?
 
 
 
